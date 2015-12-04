@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+int is_number(char arg[]);
+
 /*
  * Perform a quick sort of integers given from the command line
  * TODO optimizer pointer use later
