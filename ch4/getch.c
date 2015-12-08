@@ -24,11 +24,28 @@ int getch(void)
 }
 
 
-// push cahracter back onto input
+// push character back onto input
 void ungetch(int c)
 {
     if ( bufp >= BUFSIZE )
         printf("ungetch: too many characters\n");
     else
         buf[bufp++] = c;
+}
+
+
+// example usage. nonworking
+int main()
+{
+    int c;
+    c = getch();
+    while( c != EOF )
+    {
+        if (c == 'e')
+        {
+            ungetch(c); //prints infinite e's
+        }
+        printf("%c", c);
+        c = getch();
+    }
 }
