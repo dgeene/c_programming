@@ -1,32 +1,35 @@
 #include <stdio.h>
 
+#define LINELIMIT 100 // max 100 chars
+
 int is_number(char arg[]);
 
 /*
- * Perform a quick sort of integers given as arguments on the command line
+ * This version performs a quick sort of integers.
+ * This time the user is prompted to enter integers.
  * TODO optimizer pointer use later
  *
  */
-int main( int argc, char *argv[] )
+int main()
 {
-    int i;
-    int j = 0; // this will be valid_nums index
+    int c;
+    int ii = 0;
+    char line[0];
     int valid_nums = 0;
-    int nums[argc - 1]; //c compiler won't like this
 
 
-    for ( i=1; i<argc; i++ )
+    while ( c = getchar() != EOF )
     {
-        if ( is_number(argv[i]) )
+        line[ii] = c;
+        ++ii;
+        // malloc
+        if ( c = '\n' )
         {
-            // add to valid array
-            nums[j] = *argv[i];
-            ++j;
-            ++valid_nums;
+            printf("newline");
+            //check if #
+            //reset ii
+            //reset line[]
         }
-
-        // check each element is a num. if float then round
-        //    validNum++
     }
 
 
