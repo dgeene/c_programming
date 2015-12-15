@@ -50,7 +50,6 @@ int main()
  * testing the arg to make sure its a number
  * argv is just a one dimmensional array of strings and since strings
  * are just arrays..
- * TODO look up zero terminated arrays.
  */
 int is_number(char arg[]) // char arg[]
 {
