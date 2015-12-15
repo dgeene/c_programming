@@ -1,13 +1,16 @@
 #include <stdio.h>
 
 /*
- * Alternative imprementation to malloc() and free()
+ * Rudimentray storage allocator.
+ * Alternative implementation to malloc() and free()
+ * Calls to afree must be made in the opposite order
+ * to the calls made on alloc.
  */
 
 #define ALLOCSIZE 10000 // size of available space
 
 static char allocbuff[ALLOCSIZE]; // storage for alloc
-static char *alloccp = allocbuf; //next free position
+static char *allocp = allocbuf; //next free position
 
 
 /*
@@ -15,7 +18,7 @@ static char *alloccp = allocbuf; //next free position
  */
 char *alloc(int n)
 {
-    if ( allocbuf + ALLOCSIZE - allocp >= n ) // it fits
+    if ( allocbuf + ALLOCSIZE - allocp >= n ) // does it fit?
     {
         allocp += n;
         return allocp - n; // old p
