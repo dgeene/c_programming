@@ -1,4 +1,4 @@
-#include <stdio.c>
+#include <stdio.h>
 
 /*
  * Section 5.5
@@ -10,7 +10,7 @@
 
 
 // copy characters from t to s
-void strcpy( char *s, char *t )
+void str_cpy( char *s, char *t )
 {
     int i;
 
@@ -39,4 +39,15 @@ int strcmpptr( char *s, char *t )
         if ( *s == '\0' )
             return 0;
     return *s - *t;
+}
+
+
+
+int main()
+{
+    char foo[6];
+    char bar[] = "foo";
+
+    str_cpy( foo, bar);
+    printf("bar: %c\n", *foo);
 }

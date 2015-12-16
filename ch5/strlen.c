@@ -18,3 +18,10 @@ int strlen( char *s )
 
     return p - s; // give the num of characters advanced over
 }
+
+
+
+int main()
+{
+    printf("Length of string: %d\n", strlen("poop bizz fuzz 234"));
+}
